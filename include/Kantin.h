@@ -4,15 +4,27 @@
 #include "MenuManager.h"
 #include "CartManager.h"
 #include "TransactionManager.h"
+#include "AuthManager.h"
 #include <string>
 
 // ===== KANTIN CLASS (Main Orchestrator) =====
 // Mengatur semua manager dan flow aplikasi
-class Kantin {
+class Kantin
+{
 private:
     MenuManager menuManager;
     CartManager cartManager;
     TransactionManager transactionManager;
+    AuthManager authManager;
+
+    // Menu untuk admin
+    void menuAdmin();
+
+    // Menu untuk customer
+    void menuCustomer();
+
+    // Menu login
+    void menuLogin();
 
 public:
     Kantin();
